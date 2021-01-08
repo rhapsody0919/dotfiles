@@ -167,6 +167,12 @@ let g:syntastic_check_on_wq = 0
 "コメントアウトしてくれる
 Plugin 'tomtom/tcomment_vim'
 
+"カラースキーム
+Plugin 'altercation/vim-colors-solarized'
+syntax enable
+set background=dark
+colorscheme solarized
+
 
 
 call vundle#end()
