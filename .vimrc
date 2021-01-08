@@ -134,7 +134,9 @@ set nocompatible
 filetype off
 "set rtp+=~/.vim/bundle/vundle.vim
 set rtp+=~/dotfiles/.vim/bundle/Vundle.vim
-call vundle#begin()
+"set rtp+=.vim/bundle/Vundle.vim
+"call vundle#begin()
+call vundle#begin(expand('~/dotfiles/.vim/bundle/'))
 
 "この下に追加したいプラグインを入力する
 Plugin 'VundleVim/Vundle.vim'
@@ -168,5 +170,4 @@ Plugin 'tomtom/tcomment_vim'
 
 
 call vundle#end()
-
 filetype plugin indent on
