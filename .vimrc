@@ -132,11 +132,12 @@ endif
 "Vundle
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle.vim
+"set rtp+=~/.vim/bundle/vundle.vim
+set rtp+=~/dotfiles/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 "この下に追加したいプラグインを入力する
-Plugin 'VundleVim/vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 "ディレクトリツリーを一覧表示することができるプラグイン
 Plugin 'scrooloose/nerdtree'
 autocmd StdinReadPre * let s:std_in=1
