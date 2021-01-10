@@ -55,11 +55,11 @@ hi Comment ctermfg=3
 " 入力モードでTabキー押下時に半角スペースを挿入
 set expandtab
 " インデント幅
-set shiftwidth=4
+set shiftwidth=2
 " タブキー押下時に挿入される文字幅を指定
-set softtabstop=4
+set softtabstop=2
 " ファイル内にあるタブ文字の表示幅
-set tabstop=4
+set tabstop=2
 " ツールバーを非表示にする
 set guioptions-=T
 " yでコピーした時にクリップボードに入る
@@ -128,15 +128,18 @@ if has("autocmd")
     \ endif
   augroup END
 endif
+".ctpをphpファイルとして認識
+autocmd BufNewFile,BufRead *.ctp set filetype=php
+
 
 "Vundle
 set nocompatible
 filetype off
 "set rtp+=~/.vim/bundle/vundle.vim
-set rtp+=~/dotfiles/.vim/bundle/Vundle.vim
+set rtp+=~/.dotfiles/.vim/bundle/Vundle.vim
 "set rtp+=.vim/bundle/Vundle.vim
 "call vundle#begin()
-call vundle#begin(expand('~/dotfiles/.vim/bundle/'))
+call vundle#begin(expand('~/.dotfiles/.vim/bundle/'))
 
 "この下に追加したいプラグインを入力する
 Plugin 'VundleVim/Vundle.vim'
@@ -167,13 +170,25 @@ let g:syntastic_check_on_wq = 0
 "コメントアウトしてくれる
 Plugin 'tomtom/tcomment_vim'
 
-"カラースキーム
-Plugin 'altercation/vim-colors-solarized'
-syntax enable
-set background=dark
-colorscheme solarized
+"全角と半角の空白文字を可視化
+Plugin 'bronson/vim-trailing-whitespace'
+
+"インデントの可視化
+Plugin 'yggdroot/indentline'
+
+"コードの自動保管
+Plugin 'shougo/neocomplete.vim'
+
+
+
 
 
 
 call vundle#end()
 filetype plugin indent on
+
+"カラースキーム
+Plugin 'altercation/vim-colors-solarized'
+syntax enable
+set background=dark
+colorscheme solarized
