@@ -1,3 +1,6 @@
+filetype off
+filetype plugin indent off
+
 " ファイルを上書きする前にバックアップを作ることを無効化
 set nowritebackup
 " ファイルを上書きする前にバックアップを作ることを無効化
@@ -50,16 +53,15 @@ set list
 set listchars=tab:^\ ,trail:~
 " コマンドラインの履歴を10000件保存する
 set history=10000
-" コメントの色を水色
+" コメントの色を灰色
 hi Comment ctermfg=3
+" ファイル内にあるタブ文字の表示幅
+set tabstop=4
+" インデント幅
+set shiftwidth=4
 " 入力モードでTabキー押下時に半角スペースを挿入
 set expandtab
-" インデント幅
-set shiftwidth=2
-" タブキー押下時に挿入される文字幅を指定
-set softtabstop=2
-" ファイル内にあるタブ文字の表示幅
-set tabstop=2
+set smarttab
 " ツールバーを非表示にする
 set guioptions-=T
 " yでコピーした時にクリップボードに入る
@@ -133,8 +135,6 @@ autocmd BufNewFile,BufRead *.ctp set filetype=php
 
 
 "Vundle
-set nocompatible
-filetype off
 "set rtp+=~/.vim/bundle/vundle.vim
 set rtp+=~/.dotfiles/.vim/bundle/Vundle.vim
 "set rtp+=.vim/bundle/Vundle.vim
@@ -176,19 +176,16 @@ Plugin 'bronson/vim-trailing-whitespace'
 "インデントの可視化
 Plugin 'yggdroot/indentline'
 
-"コードの自動保管
+"コードの自動補完
 Plugin 'shougo/neocomplete.vim'
 
 
-
-
-
-
 call vundle#end()
-filetype plugin indent on
 
 "カラースキーム
 Plugin 'altercation/vim-colors-solarized'
 syntax enable
 set background=dark
 colorscheme solarized
+
+filetype plugin indent on
