@@ -24,7 +24,7 @@ set smartcase
 " 検索がファイル末尾まで進んだら、ファイル先頭から再び検索
 set wrapscan
 " インクリメンタル検索 (検索ワードの最初の文字を入力した時点で検索が開始)
-set incsearch
+"set incsearch
 " 検索結果をハイライト表示
 set hlsearch
 
@@ -139,6 +139,7 @@ autocmd BufNewFile,BufRead *.ctp set filetype=php
 set rtp+=~/.dotfiles/.vim/bundle/Vundle.vim
 "set rtp+=.vim/bundle/Vundle.vim
 "call vundle#begin()
+
 call vundle#begin(expand('~/.dotfiles/.vim/bundle/'))
 
 "この下に追加したいプラグインを入力する
@@ -179,8 +180,7 @@ Plugin 'yggdroot/indentline'
 "コードの自動補完
 Plugin 'shougo/neocomplete.vim'
 
-
-call vundle#end()
+filetype plugin indent on
 
 "カラースキーム
 Plugin 'altercation/vim-colors-solarized'
@@ -188,4 +188,17 @@ syntax enable
 set background=dark
 colorscheme solarized
 
+call vundle#end()
+
+
+" filetype off "2021/07/29 コメントアウトにした
 filetype plugin indent on
+
+"2021/06/06追加
+" visualモードで選択してからのインデント調整で調整後に選択範囲を開放しない
+vnoremap > >gv
+vnoremap < <gv
+nnoremap n nzz
+nnoremap N Nzz
+
+
