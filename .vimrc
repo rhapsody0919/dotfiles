@@ -136,11 +136,11 @@ autocmd BufNewFile,BufRead *.ctp set filetype=php
 
 "Vundle
 "set rtp+=~/.vim/bundle/vundle.vim
-set rtp+=~/.dotfiles/.vim/bundle/Vundle.vim
+set rtp+=~/dotfiles/.vim/bundle/Vundle.vim
 "set rtp+=.vim/bundle/Vundle.vim
 "call vundle#begin()
 
-call vundle#begin(expand('~/.dotfiles/.vim/bundle/'))
+call vundle#begin(expand('~/dotfiles/.vim/bundle/'))
 
 "この下に追加したいプラグインを入力する
 Plugin 'VundleVim/Vundle.vim'
@@ -182,13 +182,14 @@ Plugin 'shougo/neocomplete.vim'
 
 filetype plugin indent on
 
+call vundle#end()
+
 "カラースキーム
 Plugin 'altercation/vim-colors-solarized'
 syntax enable
 set background=dark
 colorscheme solarized
 
-call vundle#end()
 
 
 " filetype off "2021/07/29 コメントアウトにした
