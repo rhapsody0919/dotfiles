@@ -1,3 +1,5 @@
+set shell=/bin/bash
+
 filetype off
 filetype plugin indent off
 
@@ -142,7 +144,9 @@ set rtp+=~/dotfiles/.vim/bundle/Vundle.vim
 
 call vundle#begin(expand('~/dotfiles/.vim/bundle/'))
 
+""""""""""""""""""""""""""""""""""""""
 "この下に追加したいプラグインを入力する
+""""""""""""""""""""""""""""""""""""""
 Plugin 'VundleVim/Vundle.vim'
 "ディレクトリツリーを一覧表示することができるプラグイン
 Plugin 'scrooloose/nerdtree'
@@ -155,7 +159,7 @@ Plugin 'docunext/closetag.vim'
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.erb,*.php,*.vue'
 
 "HTML5の文法チェックをし、問題のある箇所を表示してくれるプラグイン
-Plugin 'hokaccha/vim-html5validator'
+" Plugin 'hokaccha/vim-html5validator'
 
 "シンタックスチェック/構文チェックをしてくれるプラグイン
 Plugin 'scrooloose/syntastic'
